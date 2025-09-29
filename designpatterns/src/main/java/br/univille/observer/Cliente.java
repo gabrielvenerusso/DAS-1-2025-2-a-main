@@ -1,19 +1,16 @@
 package br.univille.observer;
 
 public class Cliente {
-
     public static void main(String[] args) {
-        var grupoFamilia = new Publisher();
-        
-        var zezinho = new ConcreteSubscribers();
-        var huguinho = new ConcreteSubscribers();
-        var tia = new ConcreteSubscribers();
+        var grupo = new Publisher();
+        var pessoa1 = new ConcreteSubscriber();
+        var pessoa2 = new ConcreteSubscriber();
+        var pessoa3 = new ConcreteSubscriber();
 
-        grupoFamilia.subscribers(tia);
-        grupoFamilia.subscribers(huguinho);
-        grupoFamilia.subscribers(zezinho);
+        grupo.assinar(pessoa1);
+        grupo.assinar(pessoa2);
+        grupo.assinar(pessoa3);
 
-        grupoFamilia.setMainState("Bom dia");
-        grupoFamilia.notifySubscriber();
+        grupo.setMensagem("Bom dia!");
     }
 }
